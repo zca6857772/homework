@@ -5,35 +5,17 @@
     var myCanvas=document.getElementById("myCanvas");
     var zca=myCanvas.getContext("2d");
 
-    zca.beginPath();
-    zca.fillStyle="#cd2e3e";
-    zca.arc(250,250,200,0,2*Math.PI,true);
-    zca.fill();
-    zca.closePath();
-
-    zca.save();
-    zca.beginPath();
-    zca.fillStyle="#ffffff";
-    zca.arc(250,250,170,0,2*Math.PI,true);
-    zca.fill();
-    zca.closePath();
-    zca.restore();
-
-    zca.save();
-    zca.beginPath();
-    zca.fillStyle="#cd2e3e";
-    zca.arc(250,250,140,0,2*Math.PI,true);
-    zca.fill();
-    zca.closePath();
-    zca.restore();
-
-    zca.save();
-    zca.beginPath();
-    zca.fillStyle="#02468d";
-    zca.arc(250,250,110,0,2*Math.PI,true);
-    zca.fill();
-    zca.closePath();
-    zca.restore();
+    function Captain(color,R) {
+        zca.beginPath();
+        zca.fillStyle=color;
+        zca.arc(250,250,R,0,2*Math.PI,true);
+        zca.fill();
+        zca.closePath();
+    }
+    Captain("#cd2e3e",200);
+    Captain("#ffffff",170);
+    Captain("#cd2e3e",140);
+    Captain("#02468d",110);
 
     zca.save();
     zca.beginPath();
@@ -47,26 +29,4 @@
     zca.fill();
     zca.closePath();
     zca.restore();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 })();
