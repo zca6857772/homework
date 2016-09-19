@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>英雄难过棍子关</title>
+</head>
+<style>
+    *{
+        margin:0;
+    padding: 0}
+    #myCanvas{
+        float: left;
+        margin-left:500px;
+    }
+</style>
+<body text="#990000">
+<canvas id="myCanvas" height=500 width=300>当前浏览器不支持</canvas>
+<script type="text/javascript">
+    var canvas=document.getElementById('myCanvas');
+    var zca=canvas.getContext('2d');
+    var j1x=0,j1y=0,j1h=0,j1w=60;
+    var j2x=0,j2y=0,j2h=0,j2w=0;
+    var j3x=0,j3y=0,j3h=0,j3w=0;
+    var playx=40,playy=330,fengshu=0;
+    var gunzic=0,gunzix=60,gunziy=350;
+    /*空格键按下*/
+    window.addEventListener('keydown', doKeyDown, true);
+    /*空格键弹起*/
+    window.addEventListener('keyup', doKeyUp, true);
+    start();
+    /*按下空格时棍子伸长*/
+    function doKeyDown(e){
+        var keyID = e.keyCode ? e.keyCode :e.which;
+        if(keyID === 13 ) {
+            start();
+        }
+        zca.strokeStyle='blue';
+        zca.fillStyle='blue';
+        zca.lineWidth=3;
+        zca.lineTo(gunzix,gunziy);
+        zca.stroke();
+        zca.moveTo(playx+20,playy+20);
+        gunziy=gunziy-5;
+        gunzic=350-gunziy;
+    }
+    /*空格弹起 棍子倒下*/
+    function doKeyUp(e){
+        var keyID = e.keyCode ? e.keyCode :e.which;
+        if(keyID === 32 ) {
+            gunziy=350;
+            zca.beginPath();
+            zca.fillStyle='black';
+            zca.strokeStyle='black';
+            zca.lineWidth=3;
+            zca.moveTo(playx+20,playy+20);
+            zca.lineTo(playx+20+gunzic,gunziy);
+            zca.stroke();
+            zca.beginPath();
+            zca.fillStyle='#ABCDEF';
+            zca.strokeStyle='#ABCDEF';
+            zca.lineWidth=4;
+            zca.moveTo(playx+20,playy+20);
+            zca.lineTo(playx+20,350-gunzic);
+            zca.stroke();
+            movePlayer();
+        }
+    }
+
+    /*初始化的游戏画面*/
+    function start(){
+        j1x=0,j1y=0,j1h=0,j1w=60;
+        j2x=0,j2y=0,j2h=0,j2w=0;
+        j3x=0,j3y=0,j3h=0,j3w=0;
+        playx=40,playy=330,fengshu=0;
+        gunzic=0,gunzix=60,gunziy=350;
+
+        zca.fillStyle='#ABCDEF';
+        zca.fillRect(0,0,300,500);
+        /*第一块*/
+        zca.fillStyle='#000000';
+        zca.fillRect(j1x,350,j1w,150);
+        /*第二块*/
+        j2x=Math.floor(Math.random()*160+20)+j1x+j1w;
+        j2w=Math.floor(Math.random()*50+20);
+        zca.fillRect(j2x,350,j2w,150);
+        /*第三块*/
+        j3x=Math.floor(Math.random()*160+20)+j2x+j2w;
+        j3w=Math.floor(Math.random()*50+20);
+        zca.fillRect(j3x,350,j3w,150);
+        /*红色方块*/
+        zca.fillStyle='red';
+        zca.fillRect(playx,playy,20,20);
+        changeScore();
+    }
+    /*移动红色方块*/
+    function movePlayer(){
+        zca.beginPath();
+        zca.fillStyle='#ABCDEF';
+        zca.strokeStyle='#ABCDEF';
+        zca.fillRect(playx,playy,20,20);
+        zca.stroke();
+
+        zca.beginPath();
+        zca.fillStyle='red';
+        zca.strokeStyle='red';
+        playx=playx+5;/*横坐标自加5的移动*/
+        zca.fillRect(playx,playy,20,20);
+        zca.stroke();
+
+        if(playx<=(gunzic+j1w-20)){
+            setTimeout(movePlayer,30);/*每30毫秒执行一次*/
+        }
+        else{
+            if((j1w+gunzic)>j2x && j1w+gunzic<(j2x+j2w)){
+                zca.beginPath();
+                zca.fillStyle='#ABCDEF';
+                zca.strokeStyle='#ABCDEF';
+                zca.fillRect(playx,playy,20,20);
+                zca.stroke();
+                zca.beginPath();
+                zca.fillStyle='red';
+                zca.strokeStyle='red';
+                playx=j2x+j2w-20;
+                zca.fillRect(playx,playy,20,20);
+                zca.stroke();
+                moveAll();
+                fengshu++;
+            }
+            else{
+                setTimeout(game0ver,200);
+            }
+        }
+    }
+    /*移动整个画布*/
+    function moveAll(){
+        zca.fillStyle='#ABCDEF';
+        zca.fillRect(0,0,300,500);
+        zca.fillStyle='black';
+        j1x--;
+        j2x--;
+        j3x--;
+        playx--;
+        zca.fillRect(j1x,350,j1w,150);
+        zca.fillRect(j2x,350,j2w,150);
+        zca.fillRect(j3x,350,j3w,150);
+        zca.fillStyle='red';
+        zca.fillRect(playx,playy,20,20);
+        changeScore();
+        if(j2x!=0){
+            setTimeout(moveAll,3);
+        }
+        else{
+            rectChange();
+        }
+    }
+
+    function game0ver(){
+        zca.fillStyle='#ABCDEF';
+        zca.fillRect(0,0,300,500);
+        zca.fillStyle='blue';
+        zca.font = "40px 宋体";
+        zca.fillText("最终得分:"+fengshu,50,250);
+        zca.fillStyle='black';
+        zca.font = "30px 宋体";
+        zca.fillText("游戏结束",80,140);
+        zca.font = "25px 宋体";
+        zca.fillText("按f5重新开始游戏",50,350);
+        window.removeEventListener('keydown', doKeyDown, true);
+        window.removeEventListener('keyup', doKeyUp, true);
+    }
+    function rectChange(){
+        j1x=j2x;
+        j1w=j2w;
+        j2x=j3x;
+        j2w=j3w;
+        j3x=Math.floor(Math.random()*160+20)+j2x+j2w;
+        j3w=Math.floor(Math.random()*50+20);
+        gunzix=j1w;
+    }
+    function changeScore(){
+        zca.fillStyle='white';
+        zca.font = "40pt 宋体";
+        zca.fillText(fengshu,140,60);
+    }
+</script>
+</body>
+</html>
