@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="1111/jquery.js"></script>
+    <script src="1111/jquery.mobile-1.4.5.js"></script>
+    <link rel="stylesheet" href="1111/jquery.mobile-1.4.5.css">
+</head>
+<body>
+<div data-role="page" id="home">
+    <div data-role="header" data-position="fixed">
+        <h1>360855421@qq.com</h1>
+        <a href="#show" data-rel="popup" data-role="button" class="ui-btn-right">+</a>
+        <div data-role="popup" id="show" data-overlay-theme="b">
+            <ul data-role="listview">
+                <li><a href="#">写邮件</a></li>
+                <li><a href="#">写记事</a></li>
+                <li><a href="#">上传文件</a></li>
+                <li><a href="#">设置</a></li>
+            </ul>
+        </div>
+    </div>
+    <div data-role="main">
+        <from action="">
+            <input type="text" data-type="search" placeholder="搜索">
+        </from>
+            <ul data-role="listview">
+                <li><a href="#Inbox"><img src="images/Default_Inbox_32px_1087152_easyicon.net.png" class="ui-li-icon">收件箱</a></li>
+                <li><a href="#important-contacts"><img src="images/Contacts_32px_1194581_easyicon.net.png" class="ui-li-icon">重要联系人</a></li>
+                <li><a href="#Star mail"><img src="images/star_ball_28.822695035461px_1197001_easyicon.net.png" class="ui-li-icon">星际邮件</a></li>
+                <li><a href="#No mail"><img src="images/filetype_no_access_26.4px_1130040_easyicon.net.png" class="ui-li-icon">未读邮件</a></li>
+                <li><a href="#Accessories collection"><img src="images/Apps_accessories_archiver_32px_1184594_easyicon.net.png" class="ui-li-icon">附件收藏</a></li>
+            </ul>
+        <ul data-role="listview">
+            <li data-role="list-divider">应用</li>
+            <li><a href="#Mail list"><img src="images/user_list_33.407166123779px_1200704_easyicon.net.png" class="ui-li-icon">通讯录</a></li>
+            <li><a href="#cards"><img src="images/credit_cards_32px_563145_easyicon.net.png" class="ui-li-icon">贺卡</a></li>
+            <li><a href="#read"><img src="images/pictogram_din_m018_read_operating_instructions_32px_543082_easyicon.net.png" class="ui-li-icon">读书</a></li>
+            <li><a href="#More applications"><img src="images/format_indent_more_submenu_32px_1893_easyicon.net.png" class="ui-li-icon">更多应用</a></li>
+        </ul>
+        <ul data-role="listview">
+            <li data-role="list-divider">文件夹</li>
+            <li><a href="#Group mail"><img src="images/Mail_Google_32px_1072532_easyicon.net.png" class="ui-li-icon">群邮件</a></li>
+            <li><a href="#Draft box"><img src="images/draft_31.396226415094px_1150028_easyicon.net.png" class="ui-li-icon">草稿箱</a></li>
+            <li><a href="#Sent"><img src="images/Sent_31.936883629191px_1180845_easyicon.net.png" class="ui-li-icon">已发送</a></li>
+            <li><a href="#Has been deleted"><img src="images/mail_has_33.862433862434px_1189612_easyicon.net.png" class="ui-li-icon">已删除</a></li>
+            <li><a href="#Dustbin"><img src="images/dustbin_32px_38151_easyicon.net.png" class="ui-li-icon">垃圾箱</a></li>
+        </ul>
+    </div>
+</div>
+<div data-role="page" id="Inbox">
+    <div data-role="header">
+        <a href="#" data-role="button" data-rel="back">邮箱</a>
+        <h1>收件箱</h1>
+        <input type="text" data-tyle="search" placeholder="搜索">
+    </div>
+    <div data-role="main">
+        <div data-role="collapsible" data-collapsed="false">
+            <h1>邮件</h1>
+            <div data-role="collapsible-set">
+                <div data-role="collapsible">
+                    <h1>私密邮件</h1>
+                    <p><a href="#">炮友1</a></p>
+                    <p><a href="#">炮友2</a></p>
+                    <p><a href="#">炮友3</a></p>
+
+                </div>
+                <div data-role="collapsible">
+                    <h1>工作邮件</h1>
+                    <p><a href="#">老板</a></p>
+                    <p><a href="#">秘书</a></p>
+                    <p><a href="#">下属</a></p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h1>生活邮件</h1>
+                    <p><a href="#">老婆</a></p>
+                    <p><a href="#">老爸</a></p>
+                    <p><a href="#">老妈</a></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div data-role="page" id="important-contacts">
+    <div data-role="header">
+        <a href="#" data-role="button" data-rel="back">文件夹</a>
+        <h1>重要联系人</h1>
+    </div>
+    <div data-role="main">
+        <from action="" class="ui-filterable">
+            <input type="text" data-type="search" id="searchFriend">
+        </from>
+        <ul data-role="listview"
+            data-input="#searchFriend"
+            data-filter="true"
+            data-autodividers="true">
+            <li><a href="#">张大</a></li>
+            <li><a href="#">张二</a></li>
+            <li><a href="#">张三</a></li>
+
+            <li><a href="#">李大</a></li>
+            <li><a href="#">李二</a></li>
+            <li><a href="#">李三</a></li>
+
+            <li><a href="#">王大</a></li>
+            <li><a href="#">王二</a></li>
+            <li><a href="#">王三</a></li>
+
+
+        </ul>
+    </div>
+</div>
+<div data-role="page" id="Star mail">
+    <div data-role="header">
+        <a href="#" data-role="button" data-rel="back">邮箱</a>
+        <h1>星际邮件</h1>
+        <input type="text" data-tyle="search" placeholder="搜索">
+    </div>
+</div>
+<div data-role="page" id="No mail">
+    <div data-role="header">
+        <a href="#" data-role="button" data-rel="back">邮箱</a>
+        <h1>未读邮件</h1>
+        <input type="text" data-tyle="search" placeholder="搜索">
+    </div>
+</div>
+<div data-role="page" id="Accessories collection">
+    <div data-role="header">
+        <a href="#" data-role="button" data-rel="back">邮箱</a>
+        <h1>附件收藏</h1>
+        <input type="text" data-tyle="search" placeholder="搜索">
+    </div>
+</div>
+<div data-role="page" id="Mail list">
+    <div data-role="header">
+        <a href="#" data-role="button" data-rel="back">邮箱</a>
+        <h1>通讯录</h1>
+        <input type="text" data-tyle="search" placeholder="搜索">
+    </div>
+    <div data-role="main">
+        <ul data-role="listview">
+            <li><a href="#"><img src="images/address_book_contacts_groups_32px_1142573_easyicon.net.png" class="ui-li-icon">其他联系人</a></li>
+        </ul>
+    </div>
+</div>
+<div data-role="page" id="cards">
+    <div data-role="header">
+        <a href="#" data-role="button" data-rel="back">邮箱</a>
+        <h1>祝福卡</h1>
+    </div>
+    <div data-role="main">
+        <a href="#"><img src="images/3A5B60N758H8.jpg" alt=""></a>
+    </div>
+</div>
+<div data-role="page" id="read">
+    <div data-role="header">
+        <a href="#" data-role="button" data-rel="back">返回</a>
+        <h1>读书</h1>
+    </div>
+    <div data-role="main" id="daomubiji">
+        <a href="#"><img src="images/f07d51b54dbea47a8bcd18635301_5126282562a5bd9b0e08e30b72df02625e9402f24e69bcd3d7fe8a33f79ba31c3afbfa5756dae89b.jpg"></a>
+    </div>
+</div>
+<div data-role="page" id="More applications">
+    <div data-role="header">
+        <a href="#" data-role="button" data-rel="back">邮箱</a>
+        <h1>更多应用</h1>
+    </div>
+    <div data-role="main">
+        <ul data-role="listview">
+            <li><a href="#"><img src="images/calendar_30.473726758286px_1202394_easyicon.net.png" class="ui-li-icon">日历</a></li>
+            <li><a href="#"><img src="images/notepad_32px_1099293_easyicon.net.png" class="ui-li-icon">记事本</a></li>
+        </ul>
+        <ul data-role="listview">
+            <li data-role="list-divider"></li>
+            <li><a href="#"><img src="images/Gas_station_27.371900826446px_1198280_easyicon.net.png" class="ui-li-icon">文件中转站</a></li>
+        </ul>
+
+    </div>
+</div>
+<div data-role="page" id="Group mail">
+    <div data-role="header">
+        <a href="#" data-role="button" data-rel="back">邮箱</a>
+        <h1>群邮件</h1>
+        <input type="text" data-tyle="search" placeholder="搜索">
+    </div>
+</div>
+<div data-role="page" id="Draft box">
+    <div data-role="header">
+        <a href="#" data-role="button" data-rel="back">邮箱</a>
+        <h1>草稿箱</h1>
+        <input type="text" data-tyle="search" placeholder="搜索">
+    </div>
+</div>
+<div data-role="page" id="Sent">
+    <div data-role="header">
+        <a href="#" data-role="button" data-rel="back">邮箱</a>
+        <h1>已发送</h1>
+        <input type="text" data-tyle="search" placeholder="搜索">
+    </div>
+</div>
+<div data-role="page" id="Has been deleted">
+    <div data-role="header">
+        <a href="#" data-role="button" data-rel="back">邮箱</a>
+        <h1>已删除</h1>
+        <input type="text" data-tyle="search" placeholder="搜索">
+    </div>
+</div>
+<div data-role="page" id="Dustbin">
+    <div data-role="header">
+        <a href="#" data-role="button" data-rel="back">邮箱</a>
+        <h1>垃圾箱</h1>
+        <input type="text" data-tyle="search" placeholder="搜索">
+    </div>
+</div>
+</body>
+</html>
