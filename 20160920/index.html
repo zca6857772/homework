@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    .box {
+        width: 100%;
+        height: 100%;
+    }
+    .img {
+        float: left;
+        margin: 50px 50px 0 0;
+        width: 165px;
+        height: 220px;
+        overflow: hidden;
+        position: relative;
+    }
+    .img1 img{
+        transition:transform 1s linear;
+    }
+    .img1:hover img {
+        opacity: 0.7;
+        transform:translate(50px, 0px);
+    }
+    .img2 a{
+        background: #007fff;
+        color: #1f1f1f;
+        font-size: 16px;
+        text-decoration: none;
+    }
+    .a1{
+        position: absolute;
+        width:50px;
+        height:20px;
+        left:-50px;
+        top:100px;
+        transition:transform 1s ease-in 500ms;
+    }
+    .a2{
+        position: absolute;
+        width:50px;
+        height:20px;
+        left:-50px;
+        top:130px;
+        transition:transform 1s ease-in 1s;
+    }
+    .a3{
+        position: absolute;
+        width:50px;
+        height:20px;
+        left:-50px;
+        top:160px;
+        transition:transform 1s ease-in 1500ms;
+    }
+    .img2:hover{
+        opacity: 0.7;
+    }
+    .img2:hover .a1{
+
+        transform:translate(80px, 0px);
+    }
+    .img2:hover .a2{
+        transform:translate(80px, 0px);
+    }
+    .img2:hover .a3{
+        transform:translate(80px, 0px);
+    }
+    .img3 a{
+        display: block;
+        width: 165px;
+        height: 200px;
+        text-decoration: none;
+        font-size:15px;
+        color: black;
+        position: absolute;
+        background: #ffffff;
+        left: 0;
+        top:220px;
+        transition:transform 3s linear;
+    }
+    .img3:hover{
+        opacity: 0.7;
+    }
+    .img3:hover a{
+        transform:translate(0px,-200px)
+    }
+    .img4 a{
+        /*position: relative;*/
+        display: block;
+        width: 220px;
+        height: 165px;
+        position: absolute;
+        background: #007fff;
+        left: 0;
+        top:220px;
+        transition:transform 3s linear;
+        transform-origin:0% 0% ;/*设置旋转点*/
+    }
+    .img4 span{
+        text-decoration: none;
+        font-size:12px;
+        text-align: center;
+        color: black;
+        width:100%;
+        height:100%;
+        display: block;
+        position: absolute;
+        left:25px;
+        top:230px;
+        transition:transform 3s linear;
+
+    }
+    .img4:hover a{
+         transform:rotate(-30deg) ;
+     }
+    .img4:hover span{
+        transform:translate(0px,-60px)
+    }
+    .img5 div{
+        position: absolute;
+        left:100px;
+        top:-120px;
+        width:100px;
+        height:100px;
+        border: 2px solid;
+        transition:transform 3s linear;
+        transform-origin:-190% -40% ;
+    }
+    .img5:hover div{
+        transform:rotate(390deg) ;
+    }
+    .img6 a{
+        text-decoration: none;
+        font-size:18px;
+        text-align: center;
+        color: #ffffff;
+        display: block;
+        position: absolute;
+        left:10px;
+        top:80px;
+        transform: skew(90deg);
+        transition:transform 2s linear;
+    }
+    .img6:hover a{
+        transform: skew(0deg);
+    }
+    .img7 img{
+        transition:transform 2s linear;
+    }
+    .img7:hover img{
+        transform:scale(1.2,1.2);
+    }
+    .img8 .div1{
+        position: absolute;
+        left:80px;
+        top:50px;
+        width:10px;
+        height:5px;
+        background: #ffffff;
+        transform:scale(0,1);
+        transition:transform 2s linear;
+    }
+    .img8 .div2{
+        position: absolute;
+        left:80px;
+        top:150px;
+        width:10px;
+        height:5px;
+        background: #ffffff;
+        transform:scale(0,1);
+        transition:transform 2s linear;
+    }
+
+    .img8 .div3{
+        position: absolute;
+        left:40px;
+        top:95px;
+        width:5px;
+        height:10px;
+        background: #ffffff;
+        transform:scale(1,0);
+        transition:transform 2s linear;
+    }
+
+    .img8 .div4{
+        position: absolute;
+        left:125px;
+        top:95px;
+        width:5px;
+        height:10px;
+        background: #ffffff;
+        transform:scale(1,0);
+        transition:transform 2s linear;
+    }
+    .img8:hover .div1{
+        transform:scale(15,1)
+    }
+    .img8:hover .div2{
+        transform:scale(15,1)
+    }
+    .img8:hover .div3{
+        transform:scale(1,15)
+    }
+    .img8:hover .div4{
+        transform:scale(1,15)
+    }
+
+
+
+</style>
+<body>
+<div class="box">
+    <div class="img img1"><img src="images/01.jpg"></div>
+    <div class="img img2">
+        <img src="images/02.jpg">
+        <a class="a1" href="#">啦啦啦</a>
+        <a class="a2" href="#">嘿嘿嘿</a>
+        <a class="a3" href="#">哈哈哈</a>
+    </div>
+    <div class="img img3">
+        <img src="images/03.jpg">
+        <a href="#">发今晚方会计网付款无法看见对方开始分开就是个废物科技大厦方块会计师费是否可付款就开始打开就是东方时空时刻就是三个就是公开是的公司公司打工科技大厦挂科的数据库</a>
+    </div>
+    <div class="img img4">
+        <img src="images/04.jpg">
+        <a href="#"></a>
+        <span>返回吧</span>
+    </div>
+    <div class="img img5">
+        <img src="images/05.jpg">
+        <div></div>
+    </div>
+    <div class="img img6">
+        <img src="images/06.jpg">
+        <a href="#">SD FLS F DSF SD </a>
+    </div>
+    <div class="img img7">
+        <img src="images/07.jpg">
+    </div>
+    <div class="img img8">
+        <img src="images/08.jpg">
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+        <div class="div4"></div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
